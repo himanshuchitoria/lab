@@ -1,0 +1,751 @@
+/* Reset Default Styles */
+body, h1, ul, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Light Theme */
+body {
+    background-image: url("still-life-laboratory-samples.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-repeat: inherit;
+    background-attachment: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+
+
+/* Navigation Bar */
+header {
+    width: 80%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.nav-box {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007BFF;
+}
+
+/* Search Bar */
+.search-box {
+    display: flex;
+    gap: 5px;
+}
+
+.search-box input {
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.search-box button {
+    padding: 8px;
+    border-radius: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header {
+        width: 90%; /* Adjust the width to be smaller */
+    }
+
+    .nav-box {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px;
+    }
+
+    .logo {
+        font-size: 1.1rem; /* Slightly smaller */
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 5px;
+    }
+
+    .search-box input {
+        width: 100px;
+        padding: 4px;
+    }
+
+    .search-box button {
+        padding: 4px;
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        width: 40%; /* Full width on small screens */
+        
+        
+    }
+
+    .nav-box {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 8px;
+        margin-right: 50px;
+    }
+
+    .logo {
+        font-size: 1rem; /* Even smaller */
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        padding: 4px;
+    }
+
+    .search-box input {
+        width: 80px;
+        padding: 3px;
+    }
+
+    .search-box button {
+        padding: 3px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    color: #000000;
+}
+.hero h2 {
+    
+    
+}
+
+.book-btn {
+    background: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive for Tablets and Mobile */
+@media screen and (max-width: 1024px) {
+    .hero {
+        height: auto;
+        padding-top: 200px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 0.5 rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding-top: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2 rem;
+    }
+
+    .hero h2 {
+        font-size: 0.5 rem;
+    }
+
+    .book-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding-top: 200px;
+    }
+    .hero h1 {
+        font-size: 1.5 rem;
+    }
+
+    .hero h2 {
+        font-size: 0.5rem;
+    }
+
+    .book-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Advertisement Section */
+
+
+/* Advertisement Section */
+.adver {
+    display: flex;
+    justify-content: center; /* Centers it horizontally */
+    align-items: center;
+    width: 100%;
+    max-width: 200px; /* Smaller size */
+    margin: 50px auto; /* Adds spacing above & below */
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    transform: translateX(20px); /* Moves it slightly to the right */
+}
+
+/* Image Styling */
+.adver img {
+    width: 100%;
+    max-width: 150px; /* Further reduced size */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Extra spacing to prevent overlap */
+.adver::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20px; /* Adds more space below */
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .adver {
+        max-width: 180px;
+        margin: 40px auto; /* Adjusts spacing */
+        transform: translateX(10px); /* Moves slightly right */
+    }
+
+    .adver img {
+        max-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .adver {
+        max-width: 160px;
+        margin: 35px auto; /* Adjusted spacing for mobile */
+        transform: translateX(5px); /* Moves closer to the center */
+    }
+
+    .adver img {
+        max-width: 130px;
+        border-radius: 5px;
+    }
+}
+
+
+
+
+/* Full-Width Card Container */
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 220px;
+    position: relative;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Images */
+.card img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Card Icons */
+.card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #050505;
+}
+
+/* Category Tag */
+.category {
+    display: block;
+    font-size: 0.9rem;
+    color: #0c0c0c;
+    margin-bottom: 5px;
+}
+
+/* Card Title */
+.card h3 {
+    font-size: 1.2rem;
+    color: #222;
+}
+
+/* Card Description */
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Card Button */
+.card a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+/* Unique Colors for Each Card */
+.card1 { background: #E3F2FD; }  /* Light Blue */
+.card2 { background: #FCE4EC; }  /* Light Pink */
+.card3 { background: #E8F5E9; }  /* Light Green */
+.card4 { background: #FFF3E0; }  /* Light Orange */
+
+/* Button Colors */
+.card1 a { background: #5d81a8; }
+.card2 a { background: #5d81a8; }
+.card3 a { background: #5d81a8; }
+.card4 a { background: #5d81a8; }
+
+/* Button Hover Effect */
+.card1 a:hover { background: #0056b3; }
+.card2 a:hover { background: #C2185B; }
+.card3 a:hover { background: #2E7D32; }
+.card4 a:hover { background: #EF6C00; }
+
+
+/* Full Body Health Checks Section */
+.health-checks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+/* Header Styling */
+.health-checks-header {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.health-checks-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.health-checks-header p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Health Cards Container */
+.health-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Individual Health Card */
+.health-card {
+    background: #E3F2FD;
+    width: 18%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;  /* Aligning the content to the left */
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.health-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title */
+.health-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Card Description */
+.test-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+/* Card Button */
+.book-now {
+    text-decoration: none;
+    color: white;
+    background-color: #5d81a8;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: background 0.3s ease;
+}
+
+/* Button Hover Effect */
+.book-now:hover {
+    background-color: #0056b3;
+}
+
+/* Icon in Button */
+.book-now i {
+    margin-left: 10px;
+}
+
+/* Navigate Next Section */
+.navigate-next {
+    text-align: right;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.navigate-next .next-tests {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.navigate-next .next-tests i {
+    margin-left: 5px;
+}
+
+.adver{
+   
+    padding-top: 55px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 220px;
+    position: relative;
+    height: 20px;
+}
+
+
+.package-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #f8fafb;
+    font-family: 'Inter', sans-serif;
+}
+
+.header-banner {
+    text-align: center;
+    background: linear-gradient(135deg, #00a6c4, #0088a3);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 166, 196, 0.1);
+}
+
+.package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.package-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.package-name {
+    color: #00a6c4;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.price-tag {
+    background: #f0f9fb;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.price-value {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0.3rem 0;
+}
+
+.test-list {
+    margin: 1.5rem 0;
+}
+
+.test-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #4a5568;
+}
+
+.test-item i {
+    color: #00a6c4;
+    font-size: 1.1rem;
+}
+
+.book-button {
+    width: 100%;
+    background: linear-gradient(135deg, #00a6c4, #0088a3);
+    color: white;
+    border: none;
+    padding: 0.875rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.book-button:hover {
+    opacity: 0.9;
+}
+
+/* Individual Package Highlights */
+.wellwise-premium {
+    border: 2px solid #00a6c4;
+}
+
+.package-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #00a6c4;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Health Check Cards */
+.health-checks {
+    margin-top: 3rem;
+}
+
+.health-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.health-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.test-description {
+    color: #64748b;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.price-display {
+    font-size: 1.5rem;
+    color: #00a6c4;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+
+
+
+
+/* WhatsApp Section */
+.whatsapp {
+    background: #f9f9f9; /* Light background for contrast */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 40px auto;
+    max-width: 800px; /* Center the section and limit its width */
+}
+
+.whatsapp-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.whatsapp-container p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.whatsapp-btn {
+    background-color: #25D366; /* WhatsApp green color */
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-flex; /* Aligns icon and text horizontally */
+    align-items: center; /* Centers icon vertically */
+    gap: 10px; /* Space between icon and text */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.whatsapp-btn i {
+    font-size: 1.5rem; /* Icon size */
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57; /* Slightly darker green on hover */
+    transform: translateY(-3px); /* Lift button on hover */
+}
+
+
