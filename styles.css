@@ -631,21 +631,21 @@ header {
 
 /* Book Button */
 .book-button {
-    display: inline-block;
-    background-color: #007BFF;
+    
+    background-color: #4476aa;
     color: white;
     padding: 10px 18px; /* Reduced padding */
     border-radius: 8px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    
     text-decoration: none;
 }
 
 .book-button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
+    
 }
 
 /* Icon in Button */
@@ -693,7 +693,141 @@ header {
 }
 
 
+/* About Us Section */
+.about-us {
+    background-color: #fff;
+    padding: 50px 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 50px;
+}
 
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #000;
+    font-weight: 700; /* Bold text */
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 700; /* Bold text */
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700; /* Bold text */
+}
+
+.about-us ul li {
+    margin-bottom: 15px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-us .about-values {
+    margin-top: 40px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-us .about-values h3 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: 700; /* Bold text */
+}
+
+.about-us .about-values p {
+    font-size: 1rem;
+    color: #000;
+    font-weight: 700; /* Bold text */
+    line-height: 1.6;
+}
+
+/* Center the box horizontally and give space around it */
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0 10%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-us h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-us p {
+        font-size: 1rem;
+    }
+
+    .about-us .about-values h3 {
+        font-size: 1.6rem;
+    }
+
+    .container {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us h2 {
+        font-size: 2rem;
+    }
+
+    .about-us p {
+        font-size: 0.95rem;
+    }
+
+    .about-us .about-values h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-us p {
+        font-size: 0.9rem;
+    }
+
+    .about-us .about-values h3 {
+        font-size: 1.3rem;
+    }
+
+    .about-us .about-values p {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        padding: 0 5%;
+    }
+}
 
 
 /* WhatsApp Section */
