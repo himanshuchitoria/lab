@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Labs - Clone</title>
+    <title>HL-Healthcare|Gurugram</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav class="nav-box">
-            <div class="logo">HL Healthcare</div>
-          
-            <div class="search-box">
-                <input type="text" placeholder="Search for tests">
-                <button>🔍</button>
-            </div>
-        </nav>
-    </header>
+   <!-- Navigation Bar -->
+   <header>
+    <nav class="nav-box">
+        <div class="logo">HL Healthcare</div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search for tests">
+            <button onclick="searchFunction()">🔍</button>
+            <button onclick="nextHighlightedWord()">></button>
+        </div>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -120,39 +122,41 @@
             <h2>Family Offer Buy One Get One</h2>
             <p>Free SMART Report with every package</p>
         </div>
-    
-        <div class="package-grid">
-            <div class="package-card">
-                <h3 class="package-name">WellWise Essential</h3>
-                <div class="price-tag">
-                    <div class="price-value">Price for 1+1: ₹1,599</div>
-                    <div class="price-value">Price for 1: ₹959</div>
-                </div>
-                <div class="test-list">
-                    <div class="test-item">
-                        <i class="fas fa-vial"></i>
-                        <span>Detailed Diabetes Test</span>
-                    </div>
-                    <div class="test-item">
-                        <i class="fas fa-heartbeat"></i>
-                        <span>Heart Health</span>
-                    </div>
-                    <div class="test-item">
-                        <i class="fas fa-medkit"></i>
-                        <span>Liver Health</span>
-                    </div>
-                    <div class="test-item">
-                        <i class="fas fa-microscope"></i>
-                        <span>CBC (Complete Blood Count)</span>
-                    </div>
-                </div>
-                <!-- Updated Book Now link -->
-                <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20WellWise%20Essential%20package." target="_blank">
-                    <button class="book-button">Book Now</button>
-                </a>
+
+        <div class="package-grid-container">
+            <div class="package-grid">
+                <!-- Plans will be dynamically added here by JavaScript -->
+            </div>
+
+            <div class="navigation-arrows">
+                <button class="arrow prev" onclick="changePlan(-1)">&#10094;</button>
+                <button class="arrow next" onclick="changePlan(1)">&#10095;</button>
             </div>
         </div>
     </section>
+
+
+    <section class="about-us">
+        <div class="container">
+            <div class="about-text">
+                <h2>ABOUT US</h2>
+                <p>We are a leading diagnostic laboratory, offering a wide range of diagnostic tests with accuracy and reliability. As a proud franchisee of Max Labs, we bring you high-quality healthcare services, including quick, accurate results and home sample collection options. Your health is our priority.</p>
+                
+                <ul>
+                    <li>Comprehensive diagnostic tests</li>
+                    <li>Fast and accurate results</li>
+                    <li>Home sample collection available</li>
+                    <li>Franchisee of Max Labs</li>
+                </ul>
+    
+                <div class="about-values">
+                    <h3>OUR VALUES</h3>
+                    <p>Committed to reliability, transparency, and customer satisfaction in every test we perform. Our focus is to provide accessible healthcare with professionalism and care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- WhatsApp Booking Section -->
     <section class="whatsapp">
