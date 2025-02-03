@@ -88,7 +88,7 @@ function updateDisplay() {
             <div class="card-details">
                 <h3>${test.name}</h3>
                 <p class="test-description">${test.description}</p>
-                <p class="price">₹${test.price}</p>
+                <p class="price">${test.price}</p>
                 <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20${encodeURIComponent(test.name)}%20test." 
                    class="book-now" target="_blank">
                     Book Now <i class="fas fa-arrow-right"></i>
