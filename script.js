@@ -1,7 +1,7 @@
 let currentIndex = 0;
 let currentHighlightedIndex = 0;
 let highlightedElements = [];
-let timeoutId ;
+let timeoutId;
 let searchTerm = '';
 
 const plans = [ 
@@ -109,25 +109,33 @@ function changePage(step) {
     }
 }
 
-// Function to trigger search
+// **Redirection on Refresh**
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.location.pathname.includes("search-result.html")) {
+        if (performance.getEntriesByType("navigation")[0].type === "reload") {
+            window.location.href = "index.html";
+        }
+    }
+});
+
+// **Search Function**
 async function searchFunction() {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(async () => {
         const searchInput = document.getElementById('search-input');
         const searchTerm = searchInput.value.trim().toLowerCase();
 
-        if (!searchTerm) return; // Exit if input is empty
+        if (!searchTerm) return;
 
         try {
             const response = await fetch("tests.json");
             if (!response.ok) throw new Error("Failed to load tests.json");
             const testData = await response.json();
 
-            // Find matching tests (case-insensitive)
             const matchedTests = testData.filter(test => test.name.toLowerCase().includes(searchTerm));
 
             if (matchedTests.length > 0) {
-                // Redirect to search-result.html with the search term
+                sessionStorage.setItem("lastSearch", searchTerm);
                 window.location.href = `search-result.html?test=${encodeURIComponent(searchTerm)}`;
             } else {
                 alert("No results found. Please try another search term.");
@@ -139,14 +147,14 @@ async function searchFunction() {
     }, 300);
 }
 
-// Check if Enter key is pressed
+// **Check if Enter Key Pressed**
 function checkEnter(event) {
     if (event.key === 'Enter') {
         searchFunction();
     }
 }
 
-
+// **Highlight Next Word in Search**
 function nextHighlightedWord() {
     if (highlightedElements.length > 0) {
         currentHighlightedIndex = (currentHighlightedIndex + 1) % highlightedElements.length;
@@ -154,4 +162,5 @@ function nextHighlightedWord() {
     }
 }
 
+// **Load Tests**
 loadTests();
