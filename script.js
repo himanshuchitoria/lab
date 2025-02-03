@@ -1,7 +1,7 @@
 let currentIndex = 0;
 let currentHighlightedIndex = 0;
 let highlightedElements = [];
-let timeoutId = null;
+let timeoutId ;
 let searchTerm = '';
 
 const plans = [ 
@@ -88,7 +88,7 @@ function updateDisplay() {
             <div class="card-details">
                 <h3>${test.name}</h3>
                 <p class="test-description">${test.description}</p>
-                <p class="price">${test.price}</p>
+                <p class="price">₹${test.price}</p>
                 <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20${encodeURIComponent(test.name)}%20test." 
                    class="book-now" target="_blank">
                     Book Now <i class="fas fa-arrow-right"></i>
@@ -109,6 +109,7 @@ function changePage(step) {
     }
 }
 
+// Function to trigger search
 async function searchFunction() {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(async () => {
@@ -122,12 +123,12 @@ async function searchFunction() {
             if (!response.ok) throw new Error("Failed to load tests.json");
             const testData = await response.json();
 
-            // Find a matching test (case-insensitive)
-            const matchedTest = testData.find(test => test.name.toLowerCase().includes(searchTerm));
+            // Find matching tests (case-insensitive)
+            const matchedTests = testData.filter(test => test.name.toLowerCase().includes(searchTerm));
 
-            if (matchedTest) {
-                // Redirect to search-result.html with the test name in the URL
-                window.location.href = `search-result.html?test=${encodeURIComponent(matchedTest.name)}`;
+            if (matchedTests.length > 0) {
+                // Redirect to search-result.html with the search term
+                window.location.href = `search-result.html?test=${encodeURIComponent(searchTerm)}`;
             } else {
                 alert("No results found. Please try another search term.");
             }
@@ -138,6 +139,12 @@ async function searchFunction() {
     }, 300);
 }
 
+// Check if Enter key is pressed
+function checkEnter(event) {
+    if (event.key === 'Enter') {
+        searchFunction();
+    }
+}
 
 
 function nextHighlightedWord() {
