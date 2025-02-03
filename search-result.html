@@ -34,24 +34,26 @@
 </section>
 
 <script>
-    document.addEventListener("DOMContentLoaded", async function () {
-        const params = new URLSearchParams(window.location.search);
-        const testName = params.get("test");
+   document.addEventListener("DOMContentLoaded", async function () {
+    const params = new URLSearchParams(window.location.search);
+    const searchTerm = params.get("test");
 
-        if (!testName) {
-            document.getElementById("searchResult").innerHTML = "<p>No test found.</p>";
-            return;
-        }
+    if (!searchTerm) {
+        document.getElementById("searchResult").innerHTML = "<p>No test found.</p>";
+        return;
+    }
 
-        try {
-            const response = await fetch("tests.json");
-            if (!response.ok) throw new Error("Failed to load tests.json");
-            const testData = await response.json();
+    try {
+        const response = await fetch("tests.json");
+        if (!response.ok) throw new Error("Failed to load tests.json");
+        const testData = await response.json();
 
-            const matchedTest = testData.find(test => test.name.toLowerCase() === testName.toLowerCase());
+        // Find all matching tests (case-insensitive)
+        const matchedTests = testData.filter(test => test.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
-            if (matchedTest) {
-                let resultContainer = document.getElementById("searchResult");
+        if (matchedTests.length > 0) {
+            let resultContainer = document.getElementById("searchResult");
+            matchedTests.forEach(matchedTest => {
                 let testCard = document.createElement("div");
                 testCard.classList.add("health-card");
                 testCard.innerHTML = `
@@ -66,14 +68,17 @@
                     </div>
                 `;
                 resultContainer.appendChild(testCard);
-            } else {
-                document.getElementById("searchResult").innerHTML = "<p>No test found.</p>";
-            }
-        } catch (error) {
-            console.error("Error loading search result:", error);
-            document.getElementById("searchResult").innerHTML = "<p>Error loading test details.</p>";
+            });
+        } else {
+            document.getElementById("searchResult").innerHTML = "<p>No tests found matching your search term.</p>";
         }
-    });
+    } catch (error) {
+        console.error("Error loading search result:", error);
+        document.getElementById("searchResult").innerHTML = "<p>Error loading test details.</p>";
+    }
+    
+});
+
 </script>
 
 <section class="whatsapp">
