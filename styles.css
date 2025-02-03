@@ -757,7 +757,7 @@ header {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
 }
 
 /* Responsive Design */
@@ -839,3 +839,172 @@ header {
 
 .pagination { margin-top: 15px; }
 .pagination button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+
+
+/* Results Container */
+.results-container {
+    width: 100%;
+    max-width: 1200px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the container */
+    padding: 40px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 190px;
+}
+
+/* Results Header */
+.results-header h2 {
+    font-size: 1.8rem; /* Reduced font size */
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Card List Container */
+.card-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Individual Test Card */
+.test-card {
+    background: linear-gradient(145deg, #e0e7ff, #a0c4ff);
+    width: 22%;
+    min-width: 240px;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Card */
+.test-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title */
+.test-card h3 {
+    font-size: 1.1rem; /* Reduced font size */
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Test Description */
+.test-description {
+    font-size: 0.9rem; /* Reduced font size */
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* Test Price */
+.test-price {
+    font-size: 1rem; /* Reduced font size */
+    font-weight: 600;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Book Now Button */
+.book-now {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 15px; /* Reduced padding */
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+/* Button Hover Effect */
+.book-now:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Icon inside Button */
+.book-now i {
+    margin-left: 8px;
+}
+
+/* No Results */
+.no-results {
+    font-size: 1.1rem;
+    color: #737373;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .test-card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .test-card {
+        width: 45%; /* Adjust width for tablets */
+    }
+
+    .results-container {
+        padding: 30px 15px;
+        margin-top: 190px;
+    }
+
+    .results-header h2 {
+        font-size: 1.6rem; /* Slightly smaller */
+    }
+}
+
+@media (max-width: 768px) {
+    .test-card {
+        width: 48%; /* Slightly increase width for medium screens */
+    }
+
+    .results-container {
+        padding: 25px 10px;
+        margin-top: 190px;
+    }
+
+    .results-header h2 {
+        font-size: 1.4rem; /* Reduced size for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    .test-card {
+        width: 80%; /* Reduce card width on mobile screens */
+    }
+
+    .results-container {
+        padding: 20px 10px;
+        margin-top: 190px;
+    }
+
+    .results-header h2 {
+        font-size: 1.2rem; /* Smaller for mobile */
+    }
+
+    .test-description {
+        font-size: 0.8rem; /* Reduced description size */
+    }
+
+    .test-price {
+        font-size: 0.9rem; /* Reduced price size */
+    }
+}
