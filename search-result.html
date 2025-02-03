@@ -26,60 +26,61 @@
 
 
     
-<section class="hero">
-    <div class="health-checks-header">
-        <h2>Search Result</h2>
-    </div>
-    <div class="health-cards" id="searchResult"></div>
-</section>
-
-<script>
-   document.addEventListener("DOMContentLoaded", async function () {
-    const params = new URLSearchParams(window.location.search);
-    const searchTerm = params.get("test");
-
-    if (!searchTerm) {
-        document.getElementById("searchResult").innerHTML = "<p>No test found.</p>";
-        return;
-    }
-
-    try {
-        const response = await fetch("tests.json");
-        if (!response.ok) throw new Error("Failed to load tests.json");
-        const testData = await response.json();
-
-        // Find all matching tests (case-insensitive)
-        const matchedTests = testData.filter(test => test.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
-        if (matchedTests.length > 0) {
-            let resultContainer = document.getElementById("searchResult");
-            matchedTests.forEach(matchedTest => {
-                let testCard = document.createElement("div");
-                testCard.classList.add("health-card");
-                testCard.innerHTML = `
-                    <div class="card-details">
-                        <h3>${matchedTest.name}</h3>
-                        <p class="test-description">${matchedTest.description}</p>
-                        <p class="price">${matchedTest.price}</p>
-                        <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20${encodeURIComponent(matchedTest.name)}%20test."
-                           class="book-now" target="_blank">
-                            Book Now <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                `;
-                resultContainer.appendChild(testCard);
-            });
-        } else {
-            document.getElementById("searchResult").innerHTML = "<p>No tests found matching your search term.</p>";
-        }
-    } catch (error) {
-        console.error("Error loading search result:", error);
-        document.getElementById("searchResult").innerHTML = "<p>Error loading test details.</p>";
-    }
+    <section class="results-container">
+        <div class="results-header">
+            <h2>Test Results</h2>
+        </div>
+        <div class="card-list" id="searchResult"></div>
+    </section>
     
-});
+    <script>
+       document.addEventListener("DOMContentLoaded", async function () {
+        const params = new URLSearchParams(window.location.search);
+        const searchTerm = params.get("test");
+    
+        if (!searchTerm) {
+            document.getElementById("searchResult").innerHTML = "<p>No test found.</p>";
+            return;
+        }
+    
+        try {
+            const response = await fetch("tests.json");
+            if (!response.ok) throw new Error("Failed to load tests.json");
+            const testData = await response.json();
+    
+            // Find all matching tests (case-insensitive)
+            const matchedTests = testData.filter(test => test.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+            if (matchedTests.length > 0) {
+                let resultContainer = document.getElementById("searchResult");
+                matchedTests.forEach(matchedTest => {
+                    let testCard = document.createElement("div");
+                    testCard.classList.add("test-card");
+                    testCard.innerHTML = `
+                        <div class="card-content">
+                            <h3>${matchedTest.name}</h3>
+                            <p class="test-description">${matchedTest.description}</p>
+                            <p class="test-price">${matchedTest.price}</p>
+                            <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20${encodeURIComponent(matchedTest.name)}%20test."
+                               class="book-now" target="_blank">
+                                Book Now <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    `;
+                    resultContainer.appendChild(testCard);
+                });
+            } else {
+                document.getElementById("searchResult").innerHTML = "<p>No tests found matching your search term.</p>";
+            }
+        } catch (error) {
+            console.error("Error loading search result:", error);
+            document.getElementById("searchResult").innerHTML = "<p>Error loading test details.</p>";
+        }
+    });
+    </script>
+    
 
-</script>
+
 
 <section class="whatsapp">
     <div class="whatsapp-container">
