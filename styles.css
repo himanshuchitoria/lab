@@ -68,6 +68,11 @@ header {
     color: #007BFF;
     text-transform: uppercase;
 }
+.logo img{
+    height: 70px;
+    width: 100px;
+    margin-left: 20px;
+}
 
 /* Search Box */
 .search-box {
@@ -693,142 +698,96 @@ header {
 }
 
 
-/* About Us Section */
 .about-us {
-    background-color: #fff;
-    padding: 50px 20px;
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    margin-top: 50px;
-}
-
-.about-us h2 {
-    font-size: 2.5rem;
-    color: #000;
-    font-weight: 700; /* Bold text */
-    margin-bottom: 20px;
-}
-
-.about-us p {
-    font-size: 1.2rem;
-    color: #000;
-    font-weight: 700; /* Bold text */
-    line-height: 1.7;
-    margin-bottom: 30px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-us ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 40px;
-    font-size: 1rem;
-    color: #000;
-    font-weight: 700; /* Bold text */
-}
-
-.about-us ul li {
-    margin-bottom: 15px;
+    background: #f8f9fa;
+    padding: 50px 8%;
     text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.about-us .about-values {
-    margin-top: 40px;
-    text-align: left;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about-us .about-values h3 {
-    font-size: 1.8rem;
-    color: #000;
-    margin-bottom: 15px;
-    font-weight: 700; /* Bold text */
-}
-
-.about-us .about-values p {
-    font-size: 1rem;
-    color: #000;
-    font-weight: 700; /* Bold text */
-    line-height: 1.6;
-}
-
-/* Center the box horizontally and give space around it */
-.container {
+.about-container {
     display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin: 0 10%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 60%;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    color: #007bff;
+    margin-top: 20px;
+}
+
+.highlight {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d9534f; /* Red highlight */
+}
+
+.max-labs {
+    color: #ff5722; /* Orange highlight */
+    font-weight: bold;
+}
+
+.about-image {
+    flex: 1;
+    max-width: 35%;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .about-us h2 {
-        font-size: 2.2rem;
+@media screen and (max-width: 1024px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
     }
-
-    .about-us p {
-        font-size: 1rem;
+    .about-text, .about-image {
+        max-width: 100%;
     }
-
-    .about-us .about-values h3 {
-        font-size: 1.6rem;
-    }
-
-    .container {
-        padding: 0 5%;
+    .about-image {
+        margin-top: 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .about-us h2 {
-        font-size: 2rem;
+@media screen and (max-width: 600px) {
+    .about-text h2 {
+        font-size: 24px;
     }
-
-    .about-us p {
-        font-size: 0.95rem;
+    .about-text p {
+        font-size: 14px;
     }
-
-    .about-us .about-values h3 {
-        font-size: 1.5rem;
+    .about-text h3 {
+        font-size: 18px;
     }
-
-    .container {
-        padding: 0 5%;
+    .highlight {
+        font-size: 16px;
     }
 }
-
-@media (max-width: 480px) {
-    .about-us h2 {
-        font-size: 1.6rem;
-    }
-
-    .about-us p {
-        font-size: 0.9rem;
-    }
-
-    .about-us .about-values h3 {
-        font-size: 1.3rem;
-    }
-
-    .about-us .about-values p {
-        font-size: 0.85rem;
-    }
-
-    .container {
-        padding: 0 5%;
-    }
-}
-
 
 /* WhatsApp Section */
 .whatsapp {
@@ -878,3 +837,5 @@ header {
 }
 
 
+.pagination { margin-top: 15px; }
+.pagination button { padding: 10px 15px; margin: 5px; cursor: pointer; }
