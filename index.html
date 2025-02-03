@@ -13,12 +13,16 @@
    <!-- Navigation Bar -->
    <header>
     <nav class="nav-box">
-        <div class="logo">HL Healthcare</div>
+        <div class="logo">
+            <img src="HLH_Diagnostic__2_-removebg-preview.png">
+        
+        </div>
+        
         <div class="search-box">
             <input type="text" id="search-input" placeholder="Search for tests">
             <button onclick="searchFunction()">🔍</button>
-            <button onclick="nextHighlightedWord()">></button>
         </div>
+        
     </nav>
 </header>
 
@@ -68,51 +72,13 @@
             <h2>Full Body Health Checks</h2>
             <p>Choose from a variety of tests to monitor and improve your health.</p>
         </div>
-        <div class="health-cards">
-            <div class="health-card">
-                <div class="card-details">
-                    <h3>Complete Blood Count (CBC)</h3>
-                    <p class="test-description">A detailed blood test to evaluate overall blood health.</p>
-                    <p class="price">₹600</p>
-                    <!-- Updated Book Now link -->
-                    <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20CBC%20test." class="book-now" target="_blank">
-                        Book Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="health-card">
-                <div class="card-details">
-                    <h3>Lipid Profile</h3>
-                    <p class="test-description">Cholesterol and triglyceride levels to assess heart health.</p>
-                    <p class="price">₹800</p>
-                    <!-- Updated Book Now link -->
-                    <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20Lipid%20Profile%20test." class="book-now" target="_blank">
-                        Book Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="health-card">
-                <div class="card-details">
-                    <h3>Liver Function Test (LFT)</h3>
-                    <p class="test-description">Assess liver health by measuring key enzymes and proteins.</p>
-                    <p class="price">₹1000</p>
-                    <!-- Updated Book Now link -->
-                    <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20Liver%20Function%20Test." class="book-now" target="_blank">
-                        Book Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="health-card">
-                <div class="card-details">
-                    <h3>Kidney Function Test (KFT)</h3>
-                    <p class="test-description">Measures kidney health through creatinine, urea, and more.</p>
-                    <p class="price">₹700</p>
-                    <!-- Updated Book Now link -->
-                    <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20Kidney%20Function%20Test." class="book-now" target="_blank">
-                        Book Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
+        <div class="health-cards" id="healthCards"></div>
+    
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prev" onclick="changePage(-1)">⬅️ Previous</button>
+            <span id="pageNum">1</span>
+            <button id="next" onclick="changePage(1)">Next ➡️</button>
         </div>
     </section>
 
@@ -136,26 +102,6 @@
     </section>
 
 
-    <section class="about-us">
-        <div class="container">
-            <div class="about-text">
-                <h2>ABOUT US</h2>
-                <p>We are a leading diagnostic laboratory, offering a wide range of diagnostic tests with accuracy and reliability. As a proud franchisee of Max Labs, we bring you high-quality healthcare services, including quick, accurate results and home sample collection options. Your health is our priority.</p>
-                
-                <ul>
-                    <li>Comprehensive diagnostic tests</li>
-                    <li>Fast and accurate results</li>
-                    <li>Home sample collection available</li>
-                    <li>Franchisee of Max Labs</li>
-                </ul>
-    
-                <div class="about-values">
-                    <h3>OUR VALUES</h3>
-                    <p>Committed to reliability, transparency, and customer satisfaction in every test we perform. Our focus is to provide accessible healthcare with professionalism and care.</p>
-                </div>
-            </div>
-        </div>
-    </section>
     
 
     <!-- WhatsApp Booking Section -->
@@ -169,5 +115,36 @@
             </a>
         </div>
     </section>
+    <section class="about-us">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>About HLH Diagnostic Center</h2>
+                <p>
+                    Welcome to <strong>HLH Diagnostic Center</strong>, a leading **medical laboratory** committed to 
+                    providing **accurate and reliable diagnostic services**. We offer a wide range of **health check-ups**, 
+                    **pathology tests**, **radiology services**, and **blood tests** using advanced **diagnostic equipment**.
+                </p>
+                <p>
+                    Our services include **blood tests**, **urine tests**, **MRI scans**, **CT scans**, **X-rays**, 
+                    **thyroid tests**, **cholesterol tests**, **liver function tests (LFT)**, **kidney function tests (KFT)**, 
+                    **HbA1c tests**, **diabetes screening**, and **full-body checkups**. We also provide **home sample collection** for convenience.
+                </p>
+                <p class="highlight">
+                    <strong>We are proudly associated with <span class="max-labs">Max Labs</span>,</strong> ensuring 
+                    world-class diagnostic services and high-precision results. Our **NABL-certified laboratory** meets 
+                    international standards for medical testing and diagnosis.
+                </p>
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong> HLH Diagnostic Center, 123 XYZ Street, City, State, ZIP Code</p>
+                <p><strong>Phone:</strong> +91 85278 60100</p>
+                <p><strong>Email:</strong> info@hlhlab.com</p>
+                <p><strong>Working Hours:</strong> Mon-Sat: 7 AM - 8 PM | Sun: 8 AM - 2 PM</p>
+            </div>
+            <div class="about-image">
+                <img src="HLH_Diagnostic__2_-removebg-preview.png" alt="HLH Diagnostic Center Logo">
+            </div>
+        </div>
+    </section>
+    
 </body>
 </html>
