@@ -59,27 +59,36 @@ function changePlan(direction) {
 
 window.onload = displayPlans;
 
-let tests = [];
-let currentPage = 0;
+let currentPageFever = 0;
+let currentPageFullBody = 0;
 const itemsPerPage = 4;
+let feverTests = [];
+let fullBodyTests = [];
 
-async function loadTests() {
+async function loadTests(url, category) {
     try {
-        const response = await fetch("tests.json");
-        tests = await response.json();
-        updateDisplay();
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (category === "Fever") {
+            feverTests = data;
+            updateDisplayFever();
+        } else if (category === "Full Body Checkup") {
+            fullBodyTests = data;
+            updateDisplayFullBody();
+        }
     } catch (error) {
-        console.error("Error loading tests.json:", error);
+        console.error(`Error loading ${url}:`, error);
     }
 }
 
-function updateDisplay() {
+function updateDisplayFever() {
     const container = document.getElementById("healthCards");
     container.innerHTML = "";
 
-    let start = currentPage * itemsPerPage;
+    let start = currentPageFever * itemsPerPage;
     let end = start + itemsPerPage;
-    let paginatedTests = tests.slice(start, end);
+    let paginatedTests = feverTests.slice(start, end);
 
     paginatedTests.forEach(test => {
         let testCard = document.createElement("div");
@@ -98,16 +107,57 @@ function updateDisplay() {
         container.appendChild(testCard);
     });
 
-    document.getElementById("pageNum").innerText = currentPage + 1;
+    document.getElementById("pageNum").innerText = currentPageFever + 1;
 }
 
-function changePage(step) {
-    let maxPage = Math.ceil(tests.length / itemsPerPage) - 1;
-    if (currentPage + step >= 0 && currentPage + step <= maxPage) {
-        currentPage += step;
-        updateDisplay();
+function updateDisplayFullBody() {
+    const container = document.getElementById("fullBodyHealthCards");
+    container.innerHTML = "";
+
+    let start = currentPageFullBody * itemsPerPage;
+    let end = start + itemsPerPage;
+    let paginatedTests = fullBodyTests.slice(start, end);
+
+    paginatedTests.forEach(test => {
+        let testCard = document.createElement("div");
+        testCard.classList.add("health-card");
+        testCard.innerHTML = `
+            <div class="card-details">
+                <h3>${test.name}</h3>
+                <p class="test-description">${test.description}</p>
+                <p class="price">${test.price}</p>
+                <a href="https://wa.me/918527860100?text=Hi%2C%20I%20want%20to%20book%20a%20${encodeURIComponent(test.name)}%20test." 
+                   class="book-now" target="_blank">
+                    Book Now <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        `;
+        container.appendChild(testCard);
+    });
+
+    document.getElementById("fullBodyPageNum").innerText = currentPageFullBody + 1;
+}
+
+function changePageFever(step) {
+    let maxPage = Math.ceil(feverTests.length / itemsPerPage) - 1;
+    if (currentPageFever + step >= 0 && currentPageFever + step <= maxPage) {
+        currentPageFever += step;
+        updateDisplayFever();
     }
 }
+
+function changePageFullBody(step) {
+    let maxPage = Math.ceil(fullBodyTests.length / itemsPerPage) - 1;
+    if (currentPageFullBody + step >= 0 && currentPageFullBody + step <= maxPage) {
+        currentPageFullBody += step;
+        updateDisplayFullBody();
+    }
+}
+
+// Load Tests
+loadTests("fever_tests.json", "Fever");
+loadTests("tests.json", "Full Body Checkup");
+
 
 // **Redirection on Refresh**
 document.addEventListener("DOMContentLoaded", function () {
@@ -148,11 +198,19 @@ async function searchFunction() {
 }
 
 // **Check if Enter Key Pressed**
-function checkEnter(event) {
-    if (event.key === 'Enter') {
-        searchFunction();
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("search-input");
+    
+    if (searchInput) {
+        searchInput.addEventListener("keypress", function (event) {
+            if (event.key === "Enter" || event.keyCode === 13) {
+                event.preventDefault();  // Prevents any default behavior
+                searchFunction();
+            }
+        });
     }
-}
+});
+
 
 // **Highlight Next Word in Search**
 function nextHighlightedWord() {
