@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Dengue Fever Panel (Elisa)",
+        "price": "\u20b91600"
+    },
+    {
+        "name": "Dengue NS 1 Antigen Test (Elisa)",
+        "price": "\u20b9600"
+    },
+    {
+        "name": "Dengue Virus RNA PCR",
+        "price": "\u20b91550"
+    },
+    {
+        "name": "Rapid Card test - Dengue Serology (IgM & Ig G)",
+        "price": "\u20b9600"
+    },
+    {
+        "name": "Rapid Card test - Dengue NS1 Antigen",
+        "price": "\u20b9600"
+    },
+    {
+        "name": "Chikungunya IgM Test.",
+        "price": "\u20b9600"
+    },
+    {
+        "name": "Chikungunya PCR",
+        "price": "\u20b91500"
+    },
+    {
+        "name": "Chikungunya PCR CSF",
+        "price": "\u20b91500"
+    },
+    {
+        "name": "Chikungunya Virus Antibody IgM Elisa",
+        "price": "\u20b9600"
+    },
+    {
+        "name": "Peripheral Smear for Malarial ParasiteEDTA",
+        "price": "\u20b9160"
+    },
+    {
+        "name": "Malaria Antigen \u2013 P Vivax & P Falciparum",
+        "price": "\u20b9680"
+    },
+    {
+        "name": "Max Dengue/Chikungunya Panel",
+        "price": "\u20b92800"
+    },
+    {
+        "name": "Monsoon Fever Panel",
+        "price": "\u20b92200"
+    },
+    {
+        "name": "Monsoon Fever Profile-Advanced",
+        "price": "\u20b95000"
+    },
+    {
+        "name": "Monsoon Fever Profile-Basic",
+        "price": "\u20b93800"
+    },
+    {
+        "name": "Monsoon Profile-Advanced",
+        "price": "\u20b95360"
+    }
+]
