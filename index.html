@@ -31,7 +31,7 @@
         <h1>Welcome to the Future of Diagnostics</h1>
         <p>Book lab tests with home sample collection</p>
         <a href="#" class="book-btn">Book a Lab Test</a>
-        <h2>MAX LABS | Gurugram</h2>
+        <h2>In association with MAX LABS | Gurugram</h2>
     </section>
 
     <section class="cards-container">
@@ -69,18 +69,35 @@
     <!-- Full Body Health Checks Section -->
     <section class="health-checks">
         <div class="health-checks-header">
-            <h2>Full Body Health Checks</h2>
+            <h2>Fever: Dengue, Chikungunya, Malaria</h2>
             <p>Choose from a variety of tests to monitor and improve your health.</p>
         </div>
         <div class="health-cards" id="healthCards"></div>
     
         <!-- Pagination Controls -->
         <div class="pagination">
-            <button id="prev" onclick="changePage(-1)">⬅️ Previous</button>
+            <button id="prev" onclick="changePageFever(-1)"> << </button>
             <span id="pageNum">1</span>
-            <button id="next" onclick="changePage(1)">Next ➡️</button>
+            <button id="next" onclick="changePageFever(1)"> >> </button>
         </div>
     </section>
+    
+    <section class="health-checks">
+        <div class="health-checks-header">
+            <h2>All available tests</h2>
+            <p>Comprehensive health screening for overall well-being.</p>
+        </div>
+        <div class="health-cards" id="fullBodyHealthCards"></div>
+    
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="fullBodyPrev" onclick="changePageFullBody(-1)"> <<</button>
+            <span id="fullBodyPageNum">1</span>
+            <button id="fullBodyNext" onclick="changePageFullBody(1)"> >> </button>
+        </div>
+    </section>
+    
+    
 
     <!-- Family Offer Section -->
     <section class="package-container">
@@ -115,36 +132,36 @@
             </a>
         </div>
     </section>
-    <section class="about-us">
-        <div class="about-container">
-            <div class="about-text">
-                <h2>About HLH Diagnostic Center</h2>
-                <p>
-                    Welcome to <strong>HLH Diagnostic Center</strong>, a leading **medical laboratory** committed to 
-                    providing **accurate and reliable diagnostic services**. We offer a wide range of **health check-ups**, 
-                    **pathology tests**, **radiology services**, and **blood tests** using advanced **diagnostic equipment**.
-                </p>
-                <p>
-                    Our services include **blood tests**, **urine tests**, **MRI scans**, **CT scans**, **X-rays**, 
-                    **thyroid tests**, **cholesterol tests**, **liver function tests (LFT)**, **kidney function tests (KFT)**, 
-                    **HbA1c tests**, **diabetes screening**, and **full-body checkups**. We also provide **home sample collection** for convenience.
-                </p>
-                <p class="highlight">
-                    <strong>We are proudly associated with <span class="max-labs">Max Labs</span>,</strong> ensuring 
-                    world-class diagnostic services and high-precision results. Our **NABL-certified laboratory** meets 
-                    international standards for medical testing and diagnosis.
-                </p>
-                <h3>Contact Us</h3>
-                <p><strong>Address:</strong> HLH Diagnostic Center, 123 XYZ Street, City, State, ZIP Code</p>
-                <p><strong>Phone:</strong> +91 85278 60100</p>
-                <p><strong>Email:</strong> info@hlhlab.com</p>
-                <p><strong>Working Hours:</strong> Mon-Sat: 7 AM - 8 PM | Sun: 8 AM - 2 PM</p>
+    <section id="about-us">
+        <div class="container">
+            <img src="HLH_Diagnostic__2_-removebg-preview.png" alt="HLH Diagnostic Center Logo" class="loo">
+            <h1>About HLH Diagnostic Center</h1>
+            <p>Welcome to <strong>HLH Diagnostic Center (Heera Lal Healthcare)</strong>, a leading medical laboratory dedicated to providing accurate and reliable diagnostic services. We specialize in a wide range of health check-ups, pathology tests, radiology services, and blood tests using advanced diagnostic equipment to ensure precise results.</p>
+            
+            <h2>Why Choose HLH Diagnostic Center?</h2>
+            <ul>
+                <li>Proudly associated with <span class="highlight">Max Labs</span></li>
+                <li>NABL-certified laboratory</li>
+                <li>International medical testing standards</li>
+                <li>World-class diagnostic services</li>
+                <li>High-precision results</li>
+            </ul>
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p><strong>📍 Address:</strong> HLH Diagnostic Center (Heera lal healthcare) , Sector-54 , Gurugram , Haryana , India</p>
+                <p><strong>📞 Phone:</strong> +91 85278 60100</p>
+                <p><strong>📧 Email:</strong> <a href="mailto:maxlab.golfcourse@gmail.com">maxlab.golfcourse@gmail.com</a></p>
+                <p><strong>⏰ Working Hours:</strong></p>
+                <ul>
+                    <p>Monday to Saturday: 7 AM - 8 PM</p>
+                    <p>Sunday: 8 AM - 2 PM</p>
+                </ul>
             </div>
-            <div class="about-image">
-                <img src="HLH_Diagnostic__2_-removebg-preview.png" alt="HLH Diagnostic Center Logo">
-            </div>
+
+            
         </div>
     </section>
+    
     
 </body>
 </html>
