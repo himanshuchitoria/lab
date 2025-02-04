@@ -186,7 +186,8 @@ header {
     color: #000000;
 }
 .hero h2 {
-    
+    color: #000000;
+    font-size: 1rem;
     
 }
 
@@ -363,8 +364,8 @@ header {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 30px auto; /* Added more margin around the box */
-    max-width: 900px; /* Reduced width for a more compact box */
-    width: 90%; /* Ensures it takes full width up to the max width */
+    max-width: 1900px; /* Reduced width for a more compact box */
+    width: 95%; /* Ensures it takes full width up to the max width */
     box-sizing: border-box;
 }
 
@@ -392,8 +393,8 @@ header {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    width: 100%;
+    flex-direction: row;
+    width: 90%;
 }
 
 /* Individual Health Card */
@@ -490,6 +491,7 @@ header {
 @media (max-width: 1024px) {
     .health-card {
         width: 30%;
+        
     }
 
     .health-checks-header h2 {
@@ -504,7 +506,15 @@ header {
 @media (max-width: 768px) {
     .health-card {
         width: 45%;
+        flex-wrap: wrap;
     }
+
+    .health-cards {
+       
+        flex-wrap: wrap;
+    }
+
+    
 
     .health-checks-header h2 {
         font-size: 1.5rem;
@@ -518,7 +528,14 @@ header {
 @media (max-width: 480px) {
     .health-card {
         width: 100%;
+        flex-wrap: wrap;
     }
+
+    .health-cards {
+       
+        flex-wrap: wrap;
+    }
+
 
     .health-checks-header h2 {
         font-size: 1.3rem;
@@ -698,96 +715,92 @@ header {
 }
 
 
-.about-us {
-    background: #f8f9fa;
-    padding: 50px 8%;
-    text-align: left;
-}
-
-.about-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.about-text {
-    flex: 1;
-    max-width: 60%;
-}
-
-.about-text h2 {
-    font-size: 30px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.about-text p {
-    font-size: 16px;
-    color: #555;
+#about-us {
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin-bottom: 10px;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.about-text h3 {
-    font-size: 22px;
-    color: #007bff;
-    margin-top: 20px;
+.container {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-.highlight {
-    font-size: 18px;
-    font-weight: bold;
-    color: #d9534f; /* Red highlight */
+.loo {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto 30px;
 }
 
-.max-labs {
-    color: #ff5722; /* Orange highlight */
-    font-weight: bold;
+h1, h2 {
+    color: #0056b3;
+    margin-bottom: 20px;
 }
 
-.about-image {
-    flex: 1;
-    max-width: 35%;
+h1 {
+    font-size: 2.5em;
     text-align: center;
 }
 
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-   
+h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-text, .about-image {
-        max-width: 100%;
-    }
-    .about-image {
-        margin-top: 20px;
-    }
+p {
+    margin-bottom: 20px;
 }
 
-@media screen and (max-width: 600px) {
-    .about-text h2 {
-        font-size: 24px;
-    }
-    .about-text p {
-        font-size: 14px;
-    }
-    .about-text h3 {
-        font-size: 18px;
-    }
-    .highlight {
-        font-size: 16px;
-    }
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }
+
+li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    align:left ;
+}
+
+li:before {
+    content: '✓';
+    color: #28a745;
+    position: absolute;
+    left: 0;
+    margin-left: 300px;
+}
+
+.highlight {
+    color: #ff4500;
+    font-weight: bold;
+}
+
+.contact-info {
+    background-color: #e9f5ff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 
 /* WhatsApp Section */
 .whatsapp {
@@ -837,8 +850,48 @@ header {
 }
 
 
-.pagination { margin-top: 15px; }
-.pagination button { padding: 10px 15px; margin: 5px; cursor: pointer; }
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    
+    color: rgb(17, 17, 17);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.pagination button:hover {
+    background: linear-gradient(135deg, #0056b3, #004080);
+    transform: scale(1.05);
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.pagination span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 
 /* Results Container */
@@ -1007,4 +1060,47 @@ header {
     .test-price {
         font-size: 0.9rem; /* Reduced price size */
     }
+}
+
+
+.navigation-arrows {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.navigation-arrows button {
+    
+    color: rgb(17, 17, 17);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.navigation-arrows button:hover {
+    background: linear-gradient(135deg, #0056b3, #004080);
+    transform: scale(1.05);
+}
+
+.navigation-arrows button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.navigation-arrows span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background: #f8f9fa;
+    padding: 8px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
